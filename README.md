@@ -1,1 +1,2 @@
-# SFB Companion REACT APP
+# SFB Companion REACT APP (WIP)
+This is an update to my original "Single Page Application" Damage Allocation App that I created using HTML and JavaScript. After creating that app I saw potential features that I wished to add, however I found it a cumbersome and daunting undertaking using my own "SPA". Since there are much better ways to approach this using an actual SPA framework over my own goofy "SPA" I decided to move forward with a REACT version since it actually makes sense to utilize a more robust framework.
