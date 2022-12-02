@@ -1,0 +1,94 @@
+{
+    "sessions":[
+        {
+            "session_id":"30686b25-2243-4c38-80e8-4c4047f404b3",
+            "note":"not this one"
+        },
+        {
+            "session_id":"e34e5a74-da6f-4087-9ef6-922f1d31a899",
+            "note":"not this one"
+        },
+        {
+            "session_id":"d5c26707-5f91-495b-8025-f43ce30a1f0e",
+            "note":"not this one"
+        },
+        {
+            "session_id":"c2bca618-4352-4cbd-8275-4262fe7553bb",
+            "note":"not this one"
+        },
+        {
+            "session_id":"88fe3092-19b4-cb5f-dcd1-7c1aa63f6be7",
+            "note":"this is the correct one",
+            "players":[
+                {
+                    "id":"71b39a9d-2066-4511-b612-114930be8804",
+                    "name":"Tony Stark",
+                    "ships":[
+                        {
+                            "id":"3a36ce92-e264-4598-baf3-134bd07c60cd",
+                            "name":"USS Iron Man"
+                        }
+                    ]
+                },
+                {
+                    "id":"de7f589c-83dc-459d-ade1-939666feb0c2",
+                    "name":"Richard Marx",
+                    "ships":[
+                        {
+                            "id":"48b9d898-b42f-4e2e-b8ce-4ede2e8409f6",
+                            "name":"IKV Bat'leth"
+                        }
+                    ]
+                },
+                {
+                    "id":"995cadca-9af2-4946-9e37-4a98f47f7d39",
+                    "name":"Tracy Parks",
+                    "ships":[
+                        {
+                            "id":"c79ed706-8cbf-4acc-be55-27973567467a",
+                            "name":"ISS Lucifer"
+                        },
+                        {
+                            "id":"45ec613c-500f-4ed3-a7ea-a55ab13dc9e0",
+                            "name":"ISS Orcus"
+                        }
+                    ]
+                }
+            ],
+            "ships":[
+                {
+                    "id":"3a36ce92-e264-4598-baf3-134bd07c60cd",
+                    "name":"USS Iron Man",
+                    "player":{
+                        "id":"71b39a9d-2066-4511-b612-114930be8804",
+                        "name":"Tony Stark"
+                    }
+                },
+                {
+                    "id":"48b9d898-b42f-4e2e-b8ce-4ede2e8409f6",
+                    "name":"IKV Bat'leth",
+                    "player":{
+                        "id":"de7f589c-83dc-459d-ade1-939666feb0c2",
+                        "name":"Tony Stark"
+                    }
+                },
+                {
+                    "id":"c79ed706-8cbf-4acc-be55-27973567467a",
+                    "name":"ISS Lucifer",
+                    "player":{
+                        "id":"995cadca-9af2-4946-9e37-4a98f47f7d39",
+                        "name":"Tracy Parks"
+                    }
+                },
+                {
+                    "id":"45ec613c-500f-4ed3-a7ea-a55ab13dc9e0",
+                    "name":"ISS Orcus",
+                    "player":{
+                        "id":"995cadca-9af2-4946-9e37-4a98f47f7d39",
+                        "name":"Tracy Parks"
+                    }
+                }
+            ]
+        }
+    ]
+}
