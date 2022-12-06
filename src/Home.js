@@ -7,8 +7,8 @@ const Home = ({isLoading, fetchError }) => {
 
     return (
         <main className="Home">
-            {!isLoading && !fetchError && session?.players && session.players.length && <Session />}
             {isLoading && <p className="statusMsg">Loading app...</p>}
+            {!isLoading && !fetchError && session?.players?.length && <Session />}
             {!isLoading && !session?.players?.length && <NewSession />}
         </main>
     )

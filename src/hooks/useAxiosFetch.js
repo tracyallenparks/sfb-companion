@@ -5,7 +5,9 @@ const useAxiosFetch = (dataUrl) => {
     const [data, setData] = useState([]);
     const [fetchError, setFetchError] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
-
+    if(dataUrl.indexOf('undefined') > -1) {
+        dataUrl = null;
+    }
     useEffect(() => {
         let isMounted = true;
         const source = axios.CancelToken.source();

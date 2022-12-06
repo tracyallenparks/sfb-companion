@@ -10,9 +10,9 @@ import { useEffect } from 'react';
 import { useStoreActions } from 'easy-peasy';
 
 function App() {
-    let session;
     const setSession = useStoreActions((actions) => actions.setSession);
     
+    let session;
     const sessionToken = localStorage['sfb-token'] || uuid();
     localStorage['sfb-token'] = sessionToken;
 
