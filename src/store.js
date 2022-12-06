@@ -1,4 +1,4 @@
-import { createStore, action, thunk, computed } from "easy-peasy";
+import { createStore, action, thunk } from "easy-peasy";
 import api from './api/gameSessions';
 //import uuid from "react-uuid";
 
