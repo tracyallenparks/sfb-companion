@@ -1,14 +1,15 @@
 import Session from './Session';
+import NewSession from './NewSession';
 import { useStoreState } from 'easy-peasy';
 
-const Home = ({ isLoading, fetchError }) => {
-    const sessionData = useStoreState((state) => state.session);
+const Home = ({isLoading, fetchError }) => {
+    const session = useStoreState((state) => state.session);
 
     return (
         <main className="Home">
+            {!isLoading && !fetchError && session?.players && session.players.length && <Session />}
             {isLoading && <p className="statusMsg">Loading app...</p>}
-            {!isLoading && fetchError && <p className="statusMsg" style={{ color: "red" }}>{fetchError}</p>}
-            {!isLoading && !fetchError && (sessionData && sessionData.players && sessionData.players.length ? <Session players={sessionData.players} /> : <p className="statusMsg">No session.</p>)}
+            {!isLoading && !session?.players?.length && <NewSession />}
         </main>
     )
 }

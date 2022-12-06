@@ -10,25 +10,25 @@ import { useEffect } from 'react';
 import { useStoreActions } from 'easy-peasy';
 
 function App() {
+    let session;
     const setSession = useStoreActions((actions) => actions.setSession);
-    const { data, fetchError, isLoading } = useAxiosFetch('http://localhost:3500/sessions');
-
-    let sessionData = null;
-    const sessionId = localStorage['sfb-token'] || uuid();
-    localStorage['sfb-token'] = sessionId;
     
-    if(data && data.length){
-        data.forEach((data_session)=>{
-            if(data_session.session_id && data_session.session_id.toString() === sessionId.toString()){
-                sessionData = data_session;
-                return;
-            }
-        })
+    const sessionToken = localStorage['sfb-token'] || uuid();
+    localStorage['sfb-token'] = sessionToken;
+
+    const { data, fetchError, isLoading } = useAxiosFetch(`http://localhost:3500/sessions/${sessionToken}`);
+
+    if(fetchError){
+        session = {"id":sessionToken};
+    } else {
+        session = data;
     }
 
     useEffect(() => {
-        setSession(sessionData);
-    }, [sessionData, setSession])
+        if(session){
+            setSession(session);
+        }
+    },[session,setSession])
 
     return (
         <Routes>

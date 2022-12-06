@@ -1,9 +1,13 @@
 import Players from './Players';
+import { useStoreState } from 'easy-peasy';
 
-const Session = ({ players }) => {
+
+const Session = () => {
+    const session = useStoreState((state) => state.session);
+
     return (
         <>
-            {players.map(player => (
+            {session.players.map(player => (
                 <Players key={player.id} player={player} />
             ))}
         </>
