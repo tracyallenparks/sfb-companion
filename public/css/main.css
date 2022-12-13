@@ -44,6 +44,10 @@ div#root {
     justify-content: space-between;
     width: 100vw;
 }
+main {
+    padding: 0 1rem;
+    width: 100vw;
+}
 header {
     align-items: center;
     background: var(--black);
@@ -293,6 +297,9 @@ footer {
     border-bottom: 1px solid;
     margin: 0 0 1rem;
 }
+.player-name a {
+    display: block;
+}
 .ship-list {
     display: flex;
 }
@@ -348,10 +355,6 @@ button.session-submit.session-submit-attack {
 
 /* media breakpoints */
 @media screen and (max-width: 767px) {
-    #root {
-        margin: 30px 2vw;
-        width: calc(100% - 2vw);
-    }
     h1 {
         text-align: center;
     }
@@ -368,6 +371,16 @@ button.session-submit.session-submit-attack {
     }
     footer {
         text-align: center;
+    }
+    .ship-list {
+        align-content: center;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+    .ship-name {
+        margin: .5rem 0;
     }
 }
 

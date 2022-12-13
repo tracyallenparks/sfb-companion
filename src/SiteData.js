@@ -1,5 +1,5 @@
 const SiteData = {
-    "version": "0.1.0",
+    "version": "0.0.2",
     "head":{
         "title": "Star Fleet Battles Companion App",
         "meta":[
@@ -12,7 +12,7 @@ const SiteData = {
             },
             {
                 "name": "description",
-                "content": "The description"
+                "content": "Companion application for the TTG, Star Fleet Battles, developed by ADG. App created without their permission for personal use only."
             },
             {
                 "name": "author",
@@ -30,32 +30,36 @@ const SiteData = {
         "link":[
             {
                 "rel": "stylesheet",
-                "href": "./css/normalize.css"
+                "href": "../css/normalize.css"
             },
             {
                 "rel": "stylesheet",
-                "href": "./css/main.css"
+                "href": "../css/bootstrap.min.css"
+            },
+            {
+                "rel": "stylesheet",
+                "href": "../css/main.css"
             },
             {
                 "rel": "apple-touch-icon",
                 "sizes": "180x180",
-                "href": "images/apple-touch-icon.png"
+                "href": "../images/apple-touch-icon.png"
             },
             {
                 "rel": "icon",
                 "sizes": "32x32",
                 "type": "image/png",
-                "href": "images/favicon-32x32.png"
+                "href": "../images/favicon-32x32.png"
             },
             {
                 "rel": "icon",
                 "sizes": "16x16",
                 "type": "image/png",
-                "href": "images/favicon-16x16.png"
+                "href": "../images/favicon-16x16.png"
             },
             {
                 "rel": "manifest",
-                "href": "manifest.json"
+                "href": "../manifest.json"
             }
         ]
     }

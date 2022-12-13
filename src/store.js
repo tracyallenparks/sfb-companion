@@ -1,5 +1,5 @@
 import { createStore, action, thunk } from "easy-peasy";
-import api from './api/gameSessions';
+import api from './api/getSessions';
 //import uuid from "react-uuid";
 
 export default createStore({
@@ -10,9 +10,12 @@ export default createStore({
         state.session = payload
     }),
     saveSession: thunk(async (actions, newSession, helpers) => {
+        console.log('Store - saveSession')
         //const { session } = helpers.getState();
         try {
-            await api.post('/sessions', newSession);
+            if(newSession && newSession !== []){
+                await api.post('/sessions', newSession);
+            }
             //actions.setSession([response.data]);
             //actions.setPostTitle('');
             //actions.setPostBody('');
