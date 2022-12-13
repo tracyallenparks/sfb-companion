@@ -1,23 +1,18 @@
-import useAxiosFetch from './hooks/useAxiosFetch';
+import SessionSetup from './hooks/SessionSetup';
 import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
     const navigate = useNavigate();
-    const id = localStorage['token'] || null;
-
-    const { data, fetchError, isLoading } = useAxiosFetch(`http://localhost:3500/sessions/`);
-
-    const session = (!fetchError && !isLoading && data?.length && data.filter((data)=>{return data['id'] === id }))?data.filter((data)=>{return data['id'] === id })[0]:null;
-
-    const foundOldSession = !!session?.players?.length;
+    
+    const { session,fetchError,isLoading } = SessionSetup();
 
     const handleSession = (e) => {
         e.preventDefault();
-        navigate(`session/${id}`);
+        navigate(`session/${session.id}`);
     };
     const handleEditSession = (e) => {
         e.preventDefault();
-        navigate(`session-edit/${id}`);
+        navigate(`session-edit/${session.id}`);
     };
     const handleNewSession = (e) => {
         e.preventDefault();
@@ -27,7 +22,7 @@ const Home = () => {
     return (
         <main className="Home">
             {isLoading && <p>app is loading...</p>}
-            {!isLoading && !fetchError && foundOldSession &&
+            {!isLoading && !fetchError && (!!session?.players?.length) &&
                 <>
                     <p>{(session.players.length > 1)?`looks like you have a session with ${session.players.length} players.`:`It seems you have an incomplete session setup`}</p>
 
@@ -44,7 +39,7 @@ const Home = () => {
                     >Continue Session</button>
                 </>
             }
-            {!isLoading && !foundOldSession &&
+            {!isLoading && !(!!session?.players?.length) &&
                 <>
                     <p>It doesn't appear that you have a session in the system. Start a new one?</p>
                     <button

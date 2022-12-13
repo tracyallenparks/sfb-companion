@@ -1,19 +1,11 @@
-import uuid from 'react-uuid';
+import SessionSetup from './hooks/SessionSetup';
 import Players from './components/Players';
-import { useParams, Link, useNavigate } from "react-router-dom";
-import useAxiosFetch from './hooks/useAxiosFetch';
-import { useStoreState, useStoreActions } from 'easy-peasy';
+import { useNavigate } from "react-router-dom";
 import { useEffect } from 'react';
 
 const SessionPage = () => {
-    const { id } = useParams();
     const navigate = useNavigate();
-
-    const { data, fetchError, isLoading } = useAxiosFetch(`http://localhost:3500/sessions/`);
-
-    const session = (!fetchError && !isLoading && data?.length && data.filter((data)=>{return data['id'] === id }))?data.filter((data)=>{return data['id'] === id })[0]:null;
-
-    const foundOldSession = !!session?.players?.length;
+    const { session,fetchError,isLoading } = SessionSetup();
     
     useEffect(()=>{
         if(fetchError){
@@ -24,7 +16,7 @@ const SessionPage = () => {
     return (
         <main className="SessionPage">
             {isLoading && <p className="statusMsg">Loading app...</p>}
-            {!isLoading && !fetchError && foundOldSession &&
+            {!isLoading && !fetchError && (!!session?.players?.length) &&
                 <>
                 <h1>Current Session</h1>
                 <p>{session.id}</p>
