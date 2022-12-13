@@ -16,4 +16,4 @@ const Players = ({ player }) => {
     )
 }
 
-export default Players
+export default Players;

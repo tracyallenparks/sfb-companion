@@ -21,4 +21,4 @@ const NewSession = () => {
     )
 }
 
-export default NewSession
+export default NewSession;

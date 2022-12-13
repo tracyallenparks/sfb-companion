@@ -38,4 +38,4 @@ const SessionPage = () => {
     )
 }
 
-export default SessionPage
+export default SessionPage;

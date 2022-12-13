@@ -18,4 +18,4 @@ const PlayerPage = () => {
     )
 }
 
-export default PlayerPage
+export default PlayerPage;
